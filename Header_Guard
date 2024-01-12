@@ -1,0 +1,45 @@
+Header Guards in C++ are conditional compilation directives that help to avoid errors
+that arise when the same function or variable is defined more than once 
+by the mistake of a programmer.
+when a function or a variable is defined more than once, it yields an error.
+// Function 1 
+void fool() 
+{ 
+    cout << "hello"; 
+} 
+  
+// Function 2 
+void fool() 
+{ 
+    cout << "hello maddy"; 
+} 
+  
+// Driver Code 
+int main() 
+{ 
+    // Function Call 
+    fool(); 
+  
+    return 0; 
+} 
+In the above program , a function fool() has been defined twice which is causing a fatal error.
+int main() 
+{ 
+    // error: note: 'double x' previously 
+    double x{}; 
+  
+    // declared here 
+    int x{ 2 }; 
+  
+    return 0; 
+} 
+In the above program, the variable x has been defined twice which is causing a fatal error.
+
+If a situation arises where a Header file is included in a program and inadvertently a forward declaration of a function is done which has been a part of the already included header file. In that case, the content of the header file is not remembered, no matter whether it’s user-defined or predefined. 
+
+A header guard can avoid such errors by using Conditional Compilation directives. It is a combination of Conditional Compilation directives that protect your header from being included in a program multiple numbers of times.
+#ifndef HEADER_H_NAME
+#define HEADER_H_NAME
+/*...
+...*/
+#endif

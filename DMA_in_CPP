@@ -1,0 +1,22 @@
+Dynamic memory allocation in C/C++ refers to performing memory allocation manually by a programmer. 
+Dynamically allocated memory is allocated on Heap, and non-static and local variables get memory
+allocated on Stack
+For dynamically allocated memory like “int *p = new int[10]”, 
+it is the programmer’s responsibility to deallocate memory when no longer needed.
+If the programmer doesn’t deallocate memory, it causes a memory leak (memory is not deallocated 
+until the program terminates). 
+// Pointer initialized with NULL
+// Then request memory for the variable
+int *p = NULL; 
+p = new int; 
+
+/ Combine declaration of pointer 
+// and their assignment
+int *p = new int; 
+
+// Release block of memory 
+// pointed by pointer-variable
+delete[] pointer-variable; 
+ // It will free the entire array
+   // pointed by p.
+   delete[] p;
